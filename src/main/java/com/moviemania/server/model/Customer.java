@@ -1,23 +1,22 @@
 package com.moviemania.server.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 @Table (name = "customer")
 public class Customer {
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
-    private int customerId;
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    private long customerId;
 	private String customerName;
 	private String customerPassword;
 	private LocalDate dateOfBirth;

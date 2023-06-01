@@ -12,15 +12,15 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "movie")
-public class Movie {
+@Table(name = "screen")
+public class Screen {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long movieId;
-    private String movieName;
-    private List<String> movieGenre;
-    private LocalDate movieDirector;
-    private int movieLength;
-    private List<String> languages;
-    private LocalDate movieReleaseDate;
+    private long screenId;
+    private long theatreId;
+    private String screenName;
+    private List<Show> showList;
+    private LocalDate movieEndDate;
+    private int rows;
+    private int columns;
 }
