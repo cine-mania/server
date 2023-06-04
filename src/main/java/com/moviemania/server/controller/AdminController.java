@@ -1,2 +1,4 @@
-package com.moviemania.server.controller;public class AdminController {
+package com.moviemania.server.controller;
+
+public class AdminController {
 }

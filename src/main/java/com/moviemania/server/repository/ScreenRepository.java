@@ -1,2 +1,4 @@
-package com.moviemania.server.repository;public interface ScreenRepository {
+package com.moviemania.server.repository;
+
+public interface ScreenRepository {
 }

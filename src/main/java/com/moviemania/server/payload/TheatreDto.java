@@ -1,2 +1,4 @@
-package com.moviemania.server.payload;public class TheatreDto {
+package com.moviemania.server.payload;
+
+public class TheatreDto {
 }

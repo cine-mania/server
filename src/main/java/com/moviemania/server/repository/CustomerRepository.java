@@ -1,2 +1,4 @@
-package com.moviemania.server.repository;public interface CustomerRepository {
+package com.moviemania.server.repository;
+
+public interface CustomerRepository {
 }
