@@ -12,15 +12,24 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "screen")
+@Table(name = "screen_table")
 public class Screen {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+   @Column(name = "screenId",nullable = false)
     private long screenId;
-    private long theatreId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "theatres_Id")
+   private Theatre theatres;
+   @Column(name = "screenName",nullable = false)
     private String screenName;
-    private List<Show> showList;
-    private LocalDate movieEndDate;
-    private int rows;
-    private int columns;
+   @OneToMany
+   @JoinColumn(name="showsId")
+   private List<Show> showList;
+    @Column(name="movieEndDate",nullable = false)
+     private LocalDate movieEndDate;
+    @Column(name="numberOfrows",nullable = false)
+    private int numberOfrows;
+    @Column(name="numbrOfcolumns",nullable = false)
+    private int numberOfcolumns;
 }

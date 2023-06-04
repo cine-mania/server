@@ -20,6 +20,8 @@ public class Customer {
 	private String customerName;
 	private String customerPassword;
 	private LocalDate dateOfBirth;
-	private List<Ticket> myTickets;
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	@JoinColumn(name = "tickets_id")
+    private List<Ticket> myTickets;
 	private String customerContact;
 }

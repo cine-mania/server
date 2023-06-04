@@ -18,8 +18,11 @@ public class Theatre {
     private int theaterId;
     private String theaterName;
     private String theaterCity;
-    private List<Movie> movies;
-    private List<Screen> listOfScreens;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "movie_list")
+     private Movie movies;
+      @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "theatres")
+       private List<Screen> listOfScreens;
     private String managerName;
     private String managerContact;
 }

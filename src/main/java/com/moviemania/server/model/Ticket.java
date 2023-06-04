@@ -16,7 +16,7 @@ public class Ticket {
     private long ticketId;
     private long  noOfSeats;
 	private String seatName;
-    private Booking bookingRef;
+   // private Booking bookingRef;
 	private Boolean ticketStatus;
 	private String screenName;
 }

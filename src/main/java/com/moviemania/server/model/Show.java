@@ -12,16 +12,24 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "show")
+@Table(name = "show_table")
 public class Show {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "showId",nullable = false)
     private long showId;
+    @Column(name="showStartTime",nullable = false)
     private Time showStartTime;
+    @Column(name ="showEndTime" ,nullable = false)
     private Time showEndTime;
-    private List<Seat> seats;
+    @Column(name = "showName",nullable = false)
     private String showName;
-    private Movie movieName;
+    @Column(name = "movieName",nullable = false)
     private long screenId;
+    @Column(name = "theaterId",nullable = false)
     private long theaterId;
+    @OneToMany(mappedBy = "shows",cascade = CascadeType.ALL,orphanRemoval = true)
+    private List<Seat> seats;
+
+
 }

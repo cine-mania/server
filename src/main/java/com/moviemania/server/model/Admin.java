@@ -11,13 +11,19 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "admin")
+@Table(
+		name="admins",uniqueConstraints = {@UniqueConstraint(columnNames ={"adminPassword","adminContact"} )}
+)
 public class Admin {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
 	private long adminId;
+	@Column(name="adminName",nullable = false)
 	private String adminName;
+	@Column(name="adminPassword",nullable = false)
 	private String adminPassword;
+	@Column(name = "dateofBirth",nullable = false)
 	private LocalDate dateOfBirth;
+	@Column(name = "adminContact",nullable = false)
 	private String adminContact;
 }

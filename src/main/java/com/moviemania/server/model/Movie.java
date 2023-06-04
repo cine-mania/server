@@ -12,15 +12,27 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "movie")
+@Table(
+        name="movie",uniqueConstraints = {@UniqueConstraint(columnNames ={"movieName"} )}
+)
 public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long movieId;
+    @Column(name="movieName",nullable = false)
     private String movieName;
-    private List<String> movieGenre;
+    @Column(name="movieGenre",nullable = false)
+    private String movieGenre;
+  @Column(name="movieDirector" ,nullable = false)
     private LocalDate movieDirector;
+    @Column(name="movieLength" ,nullable = false)
     private int movieLength;
-    private List<String> languages;
+ @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
+ @JoinColumn(name = "showsm_id")
+    private List<Show> shows;
+
+    @Column(name="language" ,nullable = false)
+   private String language;
+    @Column(name="movieReleaseDate",nullable = false)
     private LocalDate movieReleaseDate;
 }

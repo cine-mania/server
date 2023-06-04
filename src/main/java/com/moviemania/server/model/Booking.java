@@ -17,12 +17,17 @@ public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long bookingId;
-    private long movieId;
+
     private long showId;
-    private Show showRef;
+    //  private Show showRef;
     private LocalDate bookingDate;
     private long transactionId;
     private Double totalCost;
+    private long movieBookingId;
+    @OneToMany
+    @JoinColumn(name = "seatListId")
     private List<Seat> seatList;
-    private Ticket ticket;
+     @OneToOne
+     @JoinColumn(name = "ticket_ticket_id")
+     private Ticket ticket;
 }
