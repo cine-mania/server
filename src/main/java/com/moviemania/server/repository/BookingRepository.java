@@ -1,4 +1,7 @@
 package com.moviemania.server.repository;
 
-public interface BookingRepository {
+import com.moviemania.server.model.Booking;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BookingRepository extends JpaRepository<Booking, Integer> {
 }

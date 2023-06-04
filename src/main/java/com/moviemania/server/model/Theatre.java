@@ -15,7 +15,7 @@ import java.util.List;
 public class Theatre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int theaterId;
+    private Integer theaterId;
     private String theaterName;
     private String theaterCity;
     @ManyToOne(cascade = CascadeType.ALL)
