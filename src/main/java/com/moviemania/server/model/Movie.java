@@ -13,26 +13,25 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(
-        name="movie",uniqueConstraints = {@UniqueConstraint(columnNames ={"movieName"} )}
+        name = "movie", uniqueConstraints = {@UniqueConstraint(columnNames = {"movieName"})}
 )
 public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long movieId;
-    @Column(name="movieName",nullable = false)
+    @Column(nullable = false)
     private String movieName;
-    @Column(name="movieGenre",nullable = false)
+    @Column(nullable = false)
     private String movieGenre;
-  @Column(name="movieDirector" ,nullable = false)
+    @Column(nullable = false)
     private LocalDate movieDirector;
-    @Column(name="movieLength" ,nullable = false)
+    @Column(nullable = false)
     private int movieLength;
- @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
- @JoinColumn(name = "showsm_id")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "shows_shows_id")
     private List<Show> shows;
-
-    @Column(name="language" ,nullable = false)
-   private String language;
-    @Column(name="movieReleaseDate",nullable = false)
+    @Column(nullable = false)
+    private String language;
+    @Column(nullable = false)
     private LocalDate movieReleaseDate;
 }

@@ -14,9 +14,11 @@ public class Ticket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long ticketId;
-    private long  noOfSeats;
-	private String seatName;
-   // private Booking bookingRef;
-	private Boolean ticketStatus;
-	private String screenName;
+    private long noOfSeats;
+    private String seatName;
+    @OneToOne
+    @JoinColumn(name = "booking_ref_booking_id")
+    private Booking bookingRef;
+    private Boolean ticketStatus;
+    private String screenName;
 }

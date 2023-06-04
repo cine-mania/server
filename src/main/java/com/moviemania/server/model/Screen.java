@@ -16,20 +16,19 @@ import java.util.List;
 public class Screen {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-   @Column(name = "screenId",nullable = false)
+    @Column(nullable = false)
     private long screenId;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "theatres_Id")
-   private Theatre theatres;
-   @Column(name = "screenName",nullable = false)
+    private Theatre theatres;
+    @Column(nullable = false)
     private String screenName;
-   @OneToMany
-   @JoinColumn(name="showsId")
-   private List<Show> showList;
-    @Column(name="movieEndDate",nullable = false)
-     private LocalDate movieEndDate;
-    @Column(name="numberOfrows",nullable = false)
+    @OneToMany
+    @JoinColumn(name = "showsId")
+    private List<Show> showList;
+    @Column(nullable = false)
+    private LocalDate movieEndDate;
+    @Column(nullable = false)
     private int numberOfrows;
-    @Column(name="numbrOfcolumns",nullable = false)
+    @Column(nullable = false)
     private int numberOfcolumns;
 }

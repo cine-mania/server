@@ -12,16 +12,16 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table (name = "customer")
+@Table(name = "customer")
 public class Customer {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long customerId;
-	private String customerName;
-	private String customerPassword;
-	private LocalDate dateOfBirth;
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-	@JoinColumn(name = "tickets_id")
+    private String customerName;
+    private String customerPassword;
+    private LocalDate dateOfBirth;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "tickets_id")
     private List<Ticket> myTickets;
-	private String customerContact;
+    private String customerContact;
 }

@@ -17,9 +17,10 @@ public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long bookingId;
-
     private long showId;
-    //  private Show showRef;
+    @OneToOne
+    @JoinColumn(name = "show_ref_show_id")
+    private Show showRef;
     private LocalDate bookingDate;
     private long transactionId;
     private Double totalCost;
@@ -27,7 +28,7 @@ public class Booking {
     @OneToMany
     @JoinColumn(name = "seatListId")
     private List<Seat> seatList;
-     @OneToOne
-     @JoinColumn(name = "ticket_ticket_id")
-     private Ticket ticket;
+    @OneToOne
+    @JoinColumn(name = "ticket_ticket_id")
+    private Ticket ticket;
 }

@@ -16,19 +16,19 @@ import java.util.List;
 public class Show {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "showId",nullable = false)
+    @Column(name = "show_id",nullable = false)
     private long showId;
-    @Column(name="showStartTime",nullable = false)
+    @Column(nullable = false)
     private Time showStartTime;
-    @Column(name ="showEndTime" ,nullable = false)
+    @Column(nullable = false)
     private Time showEndTime;
-    @Column(name = "showName",nullable = false)
+    @Column(nullable = false)
     private String showName;
-    @Column(name = "movieName",nullable = false)
+    @Column(nullable = false)
     private long screenId;
-    @Column(name = "theaterId",nullable = false)
+    @Column(nullable = false)
     private long theaterId;
-    @OneToMany(mappedBy = "shows",cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(mappedBy = "shows", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Seat> seats;
 
 

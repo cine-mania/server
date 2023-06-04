@@ -1,2 +1,4 @@
-package com.moviemania.server.service.impls;public interface TheatreService {
+package com.moviemania.server.service;
+
+public interface TheatreService {
 }

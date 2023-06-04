@@ -12,18 +12,18 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Entity
 @Table(
-		name="admins",uniqueConstraints = {@UniqueConstraint(columnNames ={"adminPassword","adminContact"} )}
+        name = "admin", uniqueConstraints = {@UniqueConstraint(columnNames = {"adminName", "adminContact"})}
 )
 public class Admin {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-	private long adminId;
-	@Column(name="adminName",nullable = false)
-	private String adminName;
-	@Column(name="adminPassword",nullable = false)
-	private String adminPassword;
-	@Column(name = "dateofBirth",nullable = false)
-	private LocalDate dateOfBirth;
-	@Column(name = "adminContact",nullable = false)
-	private String adminContact;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long adminId;
+    @Column(nullable = false)
+    private String adminName;
+    @Column(nullable = false)
+    private String adminPassword;
+    @Column(nullable = false)
+    private LocalDate dateOfBirth;
+    @Column(nullable = false)
+    private String adminContact;
 }
