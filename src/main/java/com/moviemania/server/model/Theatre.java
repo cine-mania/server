@@ -13,8 +13,10 @@ import java.util.List;
 @Entity
 @Table(name = "theatre")
 public class Theatre {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer theaterId;
     private String theaterName;
     private String theaterCity;
