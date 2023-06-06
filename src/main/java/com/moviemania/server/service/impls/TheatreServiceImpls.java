@@ -13,7 +13,7 @@ public class TheatreServiceImpls implements TheatreService {
         this.theatreRepository = theatreRepository;
     }
 
-    @Override
+
     public TheatreDto addTheatre(TheatreDto theatreDto) {
 
          Theatre theatre=mapToEntity(theatreDto);

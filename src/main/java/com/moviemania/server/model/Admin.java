@@ -16,7 +16,6 @@ import java.time.LocalDate;
 )
 public class Admin {
     @Id
-<<<<<<< Updated upstream
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long adminId;
     @Column(nullable = false)
@@ -24,19 +23,8 @@ public class Admin {
     @Column(nullable = false)
     private String adminPassword;
     @Column(nullable = false)
-    private LocalDate dateOfBirth;
+    private String dateOfBirth;
     @Column(nullable = false)
     private String adminContact;
-=======
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-	private long adminId;
-	@Column(name="adminName",nullable = false)
-	private String adminName;
-	@Column(name="adminPassword",nullable = false)
-	private String adminPassword;
-	@Column(name = "dateOfBirth")
-	private String dateOfBirth;
-	@Column(name = "adminContact",nullable = false)
-	private String adminContact;
->>>>>>> Stashed changes
+
 }
