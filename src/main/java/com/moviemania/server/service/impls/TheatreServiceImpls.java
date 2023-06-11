@@ -4,7 +4,9 @@ import com.moviemania.server.model.Theatre;
 import com.moviemania.server.payload.TheatreDto;
 import com.moviemania.server.repository.TheatreRepository;
 import com.moviemania.server.service.TheatreService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class TheatreServiceImpls implements TheatreService {
 
       private TheatreRepository theatreRepository;
@@ -17,8 +19,21 @@ public class TheatreServiceImpls implements TheatreService {
     public TheatreDto addTheatre(TheatreDto theatreDto) {
 
          Theatre theatre=mapToEntity(theatreDto);
-         Theatre newTheatre=theatreRepository.save(theatre);
+        System.out.println(theatre.getManagerContact());
+        Theatre newTheatre=theatreRepository.save(theatre);
         return mapToDto(newTheatre);
+    }
+
+    @Override
+    public void deleteTheatre(Integer id) {
+        try {
+            theatreRepository.deleteById(id);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return ;
     }
 
     private TheatreDto mapToDto(Theatre theatre)
@@ -28,6 +43,7 @@ public class TheatreServiceImpls implements TheatreService {
         theatreDto.setTheaterName(theatre.getTheaterName());
         theatreDto.setManagerName(theatre.getManagerName());
         theatreDto.setManagerContact(theatre.getManagerContact());
+        theatreDto.setTheaterCity(theatre.getTheaterCity());
 
         return theatreDto;
     }
@@ -37,8 +53,9 @@ public class TheatreServiceImpls implements TheatreService {
           Theatre theatre=new Theatre();
           theatre.setTheaterId(theatreDto.getTheaterId());
           theatre.setTheaterName(theatreDto.getTheaterName());
-          theatre.setManagerName(theatre.getManagerName());
-          theatre.setManagerContact(theatre.getManagerContact());
+          theatre.setManagerName(theatreDto.getManagerName());
+          theatre.setManagerContact(theatreDto.getManagerContact());
+          theatre.setTheaterCity(theatreDto.getTheaterCity());
        return  theatre;
      }
 }

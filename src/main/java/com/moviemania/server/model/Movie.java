@@ -24,7 +24,7 @@ public class Movie {
     @Column(nullable = false)
     private String movieGenre;
     @Column(nullable = false)
-    private LocalDate movieDirector;
+    private String movieDirector;
     @Column(nullable = false)
     private int movieLength;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
@@ -33,5 +33,5 @@ public class Movie {
     @Column(nullable = false)
     private String language;
     @Column(nullable = false)
-    private LocalDate movieReleaseDate;
+    private String movieReleaseDate;
 }

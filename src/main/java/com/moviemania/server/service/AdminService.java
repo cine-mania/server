@@ -4,7 +4,7 @@ import com.moviemania.server.payload.AdminDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 
-
+@Service
 public interface AdminService {
      AdminDto createAdmin(AdminDto adminDto);
 }
