@@ -21,6 +21,20 @@ public class MovieServiceImpls implements MovieService {
        Movie newMovie= movieRepository.save(movie);
         return mapToDto(newMovie);
     }
+
+    @Override
+    public void deleteMovie(long id) {
+        try {
+            movieRepository.deleteById(id);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return ;
+
+    }
+
     private MovieDto mapToDto(Movie movie)
     {
         MovieDto movieDto=new MovieDto();

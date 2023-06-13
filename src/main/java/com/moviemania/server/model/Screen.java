@@ -26,7 +26,7 @@ public class Screen {
     @JoinColumn(name = "showsId")
     private List<Show> showList;
     @Column(nullable = false)
-    private LocalDate movieEndDate;
+    private String movieEndDate;
     @Column(nullable = false)
     private int numberOfrows;
     @Column(nullable = false)

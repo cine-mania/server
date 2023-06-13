@@ -6,10 +6,7 @@ import com.moviemania.server.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/movie")
@@ -24,5 +21,13 @@ public class MovieController {
         MovieDto newMovie=movieService.addMovie(movieDto);
         return new ResponseEntity<>(newMovie, HttpStatus.CREATED);
     }
+    @DeleteMapping("{id}")
+    public  ResponseEntity<String> deleteMovieController(@PathVariable (name = "id") long id)
+    {
 
+          movieService.deleteMovie(id);
+          return ResponseEntity.ok("Movie delete succefully");
+
+
+    }
 }
